@@ -28,12 +28,6 @@ public class DisjointSetCC {
             return x;
         }
 
-//        private boolean sameSet(int x, int y) {
-//            int x_ = find(x);
-//            int y_ = find(y);
-//            return x_ == y_;
-//        }
-
         private boolean union(int x, int y) {
             int px = find(x);
             int py = find(y);
@@ -66,10 +60,7 @@ public class DisjointSetCC {
         for (int i = 0; i < n; ++i) {
             parent.set(i, i);
             rank.set(i,i);
-// Each vertex is a set on their own
         }
-
-
 
         double tm_init = (double) (System.nanoTime() - tm_start) * 1e-9;
         System.err.println("Initialisation: " + tm_init + " seconds");

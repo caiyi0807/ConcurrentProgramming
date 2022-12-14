@@ -76,6 +76,45 @@ class Driver {
             // matrix = new SparseMatrixCOO( inputFileCOO );
             matrix = new SparseMatrixCSR(inputFileCSR);
             //matrix = new SparseMatrixCSC( inputFileCSC );
+//            ArrayList<Future<Queue<String>>> a = new ArrayList<>();
+//            Queue<String> des=new LinkedList<>();
+//            try {
+//                ThreadPoolExecutor executorService = (ThreadPoolExecutor) Executors.newCachedThreadPool();
+//                for (int i = 0; i < 12; i++) {
+//                    CopyFile copyFile = new CopyFile(inputFileCSR, 12, i + 1, (SparseMatrixCSR) matrix);
+//                    Future<Queue<String>> res = executorService.submit(copyFile);
+//                    a.add(res);
+//                }
+//
+//                do {
+//                    //System.out.println(executorService.getCompletedTaskCount());
+//                    for (int i = 0; i < a.size(); i++) {
+//                        Future result = a.get(i);
+//                    }
+//                    try {
+//                        TimeUnit.MILLISECONDS.sleep(5);
+//                    } catch (InterruptedException e) {
+//                        e.printStackTrace();
+//                    }
+//                } while (executorService.getCompletedTaskCount() < a.size());
+//
+//                for (int i = 0; i < a.size(); i++) {
+//                    Future<Queue<String>> result = a.get(i);
+//                    try {
+//                        Queue<String> queue = result.get();
+//                        des.addAll(queue);
+//                    } catch (InterruptedException | ExecutionException e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//                executorService.shutdown();
+//            } catch (Exception e) {
+//                e.printStackTrace();
+//            }
+//            des.remove();
+//            int remove1 = Integer.parseInt((des.remove()));
+//            int remove2 = Integer.parseInt(des.remove());
+//            matrix=new SparseMatrixCSR(des,remove2,remove1);
         } else {
             System.err.println("Unknown format '" + format + "'");
             System.exit(43); // Kattis
